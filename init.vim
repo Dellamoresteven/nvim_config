@@ -28,8 +28,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 " Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
-" Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree' 
+Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'ervandew/supertab'
@@ -49,9 +49,6 @@ Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'morhetz/gruvbox'
-" Plug 'paroxayte/vwm.vim'
-
-
 Plug 'spolu/dwm.vim'
 
 call plug#end()
@@ -89,7 +86,6 @@ let g:gruvbox_contrast_dark="hard"
 set background=dark
 colorscheme gruvbox
 
-
 """ Other Configurations
 filetype plugin indent on
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
@@ -123,9 +119,9 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
 " Deoplete
-" let g:deoplete#enable_at_startup = 1
+ let g:deoplete#enable_at_startup = 1
 " Disable documentation window
-set completeopt-=preview
+"set completeopt-=preview
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<C-n>"
