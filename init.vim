@@ -25,6 +25,7 @@ Plug 'kien/rainbow_parentheses.vim'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
+Plug 'lfilho/cosco.vim'
 Plug 'tpope/vim-sensible'
 " Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
@@ -50,6 +51,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'morhetz/gruvbox'
 Plug 'spolu/dwm.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -104,6 +106,7 @@ set title
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '↠'
 let g:NERDTreeDirArrowCollapsible = '↡'
+let NERDTreeQuitOnOpen=1
 
 " Airline
 let g:airline_powerline_fonts = 0
@@ -119,7 +122,7 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
 " Deoplete
- let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 " Disable documentation window
 "set completeopt-=preview
 
@@ -254,6 +257,8 @@ autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yap
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
+nmap gr :GoRun<CR>
+autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 
 
 
@@ -269,3 +274,6 @@ au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadRound
 " au Syntax * RainbowParenthesesLoadChevrons
 nnoremap <leader><leader> :update<cr>
+set clipboard=unnamedplus
+set relativenumber
+"au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
