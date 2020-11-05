@@ -54,11 +54,12 @@ Plug 'dkarter/bullets.vim'
 Plug 'morhetz/gruvbox'
 Plug 'spolu/dwm.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vimlab/split-term.vim'
 
 call plug#end()
 
 """ Python3 VirtualEnv
-"let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
+let g:python3_host_prog = expand('~/.config/nvim/env/bin/python3')
 
 """ Coloring
 " syntax on
@@ -69,7 +70,7 @@ call plug#end()
 " highlight NonText guibg=none
 
 " Opaque Background (Comment out to use terminal's profile)
-" set termguicolors
+ "set termguicolors
 
 " Transparent Background (For i3 and compton)
 highlight Normal guibg=NONE ctermbg=NONE
@@ -233,7 +234,7 @@ endfunction
 
 let mapleader=","
 nmap <leader>q :NERDTreeToggle<CR>
-nmap \ <leader>q
+nmap \ :NERDTreeFind<CR>
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>ee :Colors<CR>
 nmap <leader>ea :AirlineTheme 
@@ -245,8 +246,8 @@ nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
-nmap <leader>s <C-w>s<C-w>j:terminal<CR>
-nmap <leader>vs <C-w>v<C-w>l:terminal<CR>
+"nmap <leader>s <C-w>s<C-w>j:terminal<CR>
+nmap <leader>vs :VTerm<CR>
 nmap <leader>d <Plug>(pydocstring)
 nmap <leader>f :Files<CR>
 nmap <leader>g :Goyo<CR>
@@ -259,9 +260,13 @@ autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yap
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
+nmap <leader>x :bd<CR>
 nmap gr :GoRun<CR>
 nmap q ::q<CR>
 nmap wq ::wq<CR>
+nmap w ::w<CR>
+nmap <S-E> $
+nmap <S-B> 0
 autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 
 
@@ -283,3 +288,4 @@ set relativenumber
 "au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+let g:split_term_default_shell = "bash"
