@@ -27,7 +27,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'lfilho/cosco.vim'
 Plug 'tpope/vim-sensible'
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree' 
 "Plug 'shougo/vimfiler.vim'
@@ -258,7 +258,7 @@ nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
 nmap <silent> <leader><leader> :noh<CR>
-nmap <Tab> :bnext<CR>
+nmap <Tab> <C-space><CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>x :bd<CR>
 nmap gr :GoRun<CR>
