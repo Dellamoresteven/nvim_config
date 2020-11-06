@@ -255,15 +255,15 @@ nmap <leader>a gaip*
 nmap <leader>vs :VTerm<CR>
 nmap <leader>d <Plug>(pydocstring)
 nmap <leader>f :Files<CR>
-nmap <leader>g :Goyo<CR>
+"nmap <leader>g :Goyo<CR>
 " nmap <leader>h :RainbowParentheses!!<CR>
-nmap <leader>j :set filetype=journal<CR>
-nmap <leader>k :ColorToggle<CR>
-nmap <leader>l :Limelight!!<CR>
-xmap <leader>l :Limelight!!<CR>
+"nmap <leader>j :set filetype=journal<CR>
+"nmap <leader>k :ColorToggle<CR>
+"nmap <leader>l :Limelight!!<CR>
+"xmap <leader>l :Limelight!!<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
-nmap <silent> <leader><leader> :noh<CR>
-nmap <Tab> <C-space><CR>
+"nmap <silent> <leader><leader> :noh<CR>
+imap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>x :bd<CR>
 nmap gr :GoRun<CR>
@@ -296,7 +296,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 au Syntax * RainbowParenthesesLoadRound
 " au Syntax * RainbowParenthesesLoadChevrons
-nnoremap <leader><leader> :update<cr>
+"nnoremap <leader><leader> :update<cr>
 set clipboard=unnamedplus
 set relativenumber
 "au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
