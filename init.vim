@@ -232,6 +232,11 @@ endfunction
 
 """ Custom Mappings
 
+"function! WindowMove(num)
+
+"endfunction
+
+
 let mapleader=","
 nmap <leader>q :NERDTreeToggle<CR>
 nmap \ :NERDTreeFind<CR>
@@ -268,6 +273,15 @@ nmap w ::w<CR>
 nmap <S-E> $
 nmap <S-B> 0
 autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+
+
+nmap <space>1 <C-j><esc><C-space>
+nmap <space>3 <C-j><esc><C-j><esc><C-j><esc><C-space>
+nmap <space>2 <C-j><esc><C-j><esc><C-space>
+nmap <space>4 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
+nmap <space>5 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
+nmap <space>6 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
+
 
 
 
