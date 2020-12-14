@@ -47,9 +47,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 " Plug 'heavenshell/vim-pydocstring'
 Plug 'vim-scripts/loremipsum'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'metakirby5/codi.vim'
+"Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'morhetz/gruvbox'
 Plug 'spolu/dwm.vim'
@@ -237,7 +237,7 @@ endfunction
 "endfunction
 
 
-let mapleader=","
+let mapleader=" "
 nmap <leader>q :NERDTreeToggle<CR>
 nmap \ :NERDTreeFind<CR>
 nmap <leader>w :TagbarToggle<CR>
@@ -284,6 +284,7 @@ nmap <space>6 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-spa
 
 
 
+nmap <space>s /
 
 
 
@@ -301,5 +302,5 @@ set clipboard=unnamedplus
 set relativenumber
 "au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+"au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 let g:split_term_default_shell = "bash"
