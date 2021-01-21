@@ -47,9 +47,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 " Plug 'heavenshell/vim-pydocstring'
 Plug 'vim-scripts/loremipsum'
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'metakirby5/codi.vim'
+Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'morhetz/gruvbox'
 Plug 'spolu/dwm.vim'
@@ -62,10 +62,10 @@ call plug#end()
 let g:python3_host_prog = expand('~/.config/nvim/env/bin/python3')
 
 """ Coloring
-" syntax on
+ syntax on
 " color dracula
-" highlight Pmenu guibg=white guifg=black gui=bold
-" highlight Comment gui=bold
+ highlight Pmenu guibg=white guifg=black gui=bold
+ highlight Comment gui=bold
 " highlight Normal gui=none
 " highlight NonText guibg=none
 
@@ -283,10 +283,8 @@ nmap <space>5 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
 nmap <space>6 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
 
 
-
 nmap <space>s /
-
-
+nmap tt ]%
 
 set mouse=a
 set tags=tags
