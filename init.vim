@@ -302,3 +302,14 @@ set relativenumber
 au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 "au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 let g:split_term_default_shell = "bash"
+
+"set foldmethod=indent
+set foldmethod=manual
+"set foldlevelstart=99
+"folds
+"nmap <leader>ya zM<CR>
+"nmap <leader>yn zR<CR>
+"nmap <leader>yl zl<CR>
+"nmap <leader>yy zm<CR>
+"nmap <leader>yy za<CR>
+nmap <leader><leader> zO<CR>
