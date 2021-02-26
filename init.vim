@@ -266,7 +266,7 @@ nmap <leader>f :Files<CR>
 "xmap <leader>l :Limelight!!<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
 "nmap <silent> <leader><leader> :noh<CR>
-imap <Tab> :bnext<CR>
+nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>x :bd<CR>
 nmap gr :GoRun<CR>
