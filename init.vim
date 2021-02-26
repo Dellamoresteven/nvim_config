@@ -56,6 +56,9 @@ Plug 'spolu/dwm.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vimlab/split-term.vim'
 
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-repeat'
+
 call plug#end()
 
 """ Python3 VirtualEnv
@@ -313,3 +316,5 @@ set foldmethod=manual
 "nmap <leader>yy zm<CR>
 "nmap <leader>yy za<CR>
 nmap <leader><leader> zO<CR>
+
+let g:gitgutter_git_executable = '/usr/bin/git'
