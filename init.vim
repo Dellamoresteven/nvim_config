@@ -196,60 +196,10 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfunction
 
-" Dracula Mode (Dark)
-function! ColorDracula()
-    let g:airline_theme=''
-    color dracula
-    IndentLinesEnable
-endfunction
-
-" Seoul256 Mode (Dark & Light)
-function! ColorSeoul256()
-    let g:airline_theme='silver'
-    color seoul256
-    IndentLinesDisable
-endfunction
-
-" Forgotten Mode (Light)
-function! ColorForgotten()
-    " Light airline themes: tomorrow, silver, alduin
-    " Light colors: forgotten-light, nemo-light
-    let g:airline_theme='tomorrow'
-    color forgotten-light
-    IndentLinesDisable
-endfunction
-
-" Zazen Mode (Black & White)
-function! ColorZazen()
-    let g:airline_theme='badcat'
-    color zazen
-    IndentLinesEnable
-endfunction
-
-" Zazen Mode (Black & White)
-" function! ColorZazen()
-"     let g:airline_theme='badcat'
-"     color zazen
-"     IndentLinesEnable
-" endfunction
-
-""" Custom Mappings
-
-"function! WindowMove(num)
-
-"endfunction
-
-
 let mapleader=" "
 nmap <leader>q :NERDTreeToggle<CR>
 nmap \ :NERDTreeFind<CR>
 nmap <leader>w :TagbarToggle<CR>
-nmap <leader>ee :Colors<CR>
-nmap <leader>ea :AirlineTheme 
-nmap <leader>e1 :call ColorDracula()<CR>
-nmap <leader>e2 :call ColorSeoul256()<CR>
-nmap <leader>e3 :call ColorForgotten()<CR>
-nmap <leader>e4 :call ColorZazen()<CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
@@ -258,21 +208,17 @@ nmap <leader>a gaip*
 nmap <leader>vs :VTerm<CR>
 nmap <leader>d <Plug>(pydocstring)
 nmap <leader>f :Files<CR>
-"nmap <leader>g :Goyo<CR>
-" nmap <leader>h :RainbowParentheses!!<CR>
-"nmap <leader>j :set filetype=journal<CR>
-"nmap <leader>k :ColorToggle<CR>
-"nmap <leader>l :Limelight!!<CR>
-"xmap <leader>l :Limelight!!<CR>
+
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
-"nmap <silent> <leader><leader> :noh<CR>
+nmap <silent> <leader><leader> :noh<CR>
+
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>x :bd<CR>
 nmap gr :GoRun<CR>
-nmap q ::q<CR>
-nmap wq ::wq<CR>
-nmap w ::w<CR>
+nmap q :q<CR>
+nmap wq :wq<CR>
+nmap w :w<CR>
 nmap <S-E> $
 nmap <S-B> 0
 autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
@@ -295,26 +241,16 @@ set tags=tags
 au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
 au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadChevrons
-"nnoremap <leader><leader> :update<cr>
+
 set clipboard=unnamedplus
 set relativenumber
-"au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-"au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 let g:split_term_default_shell = "bash"
 
 "set foldmethod=indent
 set foldmethod=manual
-"set foldlevelstart=99
-"folds
-"nmap <leader>ya zM<CR>
-"nmap <leader>yn zR<CR>
-"nmap <leader>yl zl<CR>
-"nmap <leader>yy zm<CR>
-"nmap <leader>yy za<CR>
-nmap <leader><leader> zO<CR>
 
 let g:gitgutter_git_executable = '/usr/bin/git'
+
+au TermClose * nested call OnTermClose()
