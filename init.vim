@@ -216,9 +216,10 @@ nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>x :bd<CR>
 nmap gr :GoRun<CR>
-nmap q :q<CR>
-nmap wq :wq<CR>
-nmap w :w<CR>
+"nmap q :q<CR>
+"nmap wq :wq<CR>
+"nmap w :w<CR>
+nmap qq :!qutebrowser &<CR>
 nmap <S-E> $
 nmap <S-B> 0
 autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
