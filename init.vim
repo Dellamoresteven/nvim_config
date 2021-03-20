@@ -216,9 +216,9 @@ nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>x :bd<CR>
 nmap gr :GoRun<CR>
-nmap q :q<CR>
-nmap wq :wq<CR>
-nmap w :w<CR>
+"nmap q :q<CR>
+"nmap wq :wq<CR>
+"nmap w :w<CR>
 nmap <S-E> $
 nmap <S-B> 0
 autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
@@ -254,3 +254,16 @@ set foldmethod=manual
 let g:gitgutter_git_executable = '/usr/bin/git'
 
 au TermClose * nested call OnTermClose()
+
+function! HLNext (blinktime)
+    set invcursorline
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    set invcursorline
+    redraw
+endfunction
+
+"nnoremap <silent> n  n:call HLNext(0.4)<cr>
+
+set spelllang=en
+set spell
