@@ -277,4 +277,5 @@ function! s:quteSearch(...)
     exec "!qutebrowser " . '"' . search . '"'
     endfunction
 
-command! -nargs=1 Cute call s:quteSearch(<f-args>)
+command -nargs=1 Cute call s:quteSearch(<f-args>)
+command W :w
