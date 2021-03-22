@@ -274,7 +274,7 @@ function! s:quteSearch(...)
     "execute(:!qutebrowser &)
     let search=join(a:000," ")
     ":!qutebrowser echom search &
-    exec "!qutebrowser " . '"' . search . '"'
+    exec "!qutebrowser " . '"' . search . '" &'
     endfunction
 
 command -nargs=1 Cute call s:quteSearch(<f-args>)
