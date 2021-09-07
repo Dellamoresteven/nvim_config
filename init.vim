@@ -59,6 +59,10 @@ Plug 'vimlab/split-term.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
 
+Plug 'dyng/ctrlsf.vim' " search
+
+Plug 'kshenoy/vim-signature' " sidebar Marks
+
 call plug#end()
 
 """ Python3 VirtualEnv
@@ -224,14 +228,14 @@ nmap <S-E> $
 nmap <S-B> 0
 autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 
+let g:ctrlsf_backend = 'rg'
 
 nmap <space>1 <C-j><esc><C-space>
-nmap <space>3 <C-j><esc><C-j><esc><C-j><esc><C-space>
 nmap <space>2 <C-j><esc><C-j><esc><C-space>
-nmap <space>4 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
-nmap <space>5 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
-nmap <space>6 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
-
+nmap <space>3 <C-j><esc><C-j><esc><C-j><esc><C-space>
+"nmap <space>4 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
+"nmap <space>5 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
+"nmap <space>6 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
 
 nmap <space>s /
 nmap tt ]%
