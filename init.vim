@@ -283,5 +283,5 @@ function! s:quteSearch(...)
 
 command -nargs=1 Cute call s:quteSearch(<f-args>)
 
-nnoremap <expr> ' "'" . nr2char(getchar()) . "zz"
-nnoremap <expr> ` "`" . nr2char(getchar()) . "zz"et scrolloff=999
+nnoremap <expr> ' "`" . nr2char(getchar()) . "zz"
+nnoremap <expr> ` "`" . nr2char(getchar()) . "zz"
