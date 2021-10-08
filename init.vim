@@ -1,5 +1,3 @@
-""" Optixal's Neovim Init.vim
-
 """ Vim-Plug
 call plug#begin()
 
@@ -285,3 +283,4 @@ command -nargs=1 Cute call s:quteSearch(<f-args>)
 
 nnoremap <expr> ' "`" . nr2char(getchar()) . "zz"
 nnoremap <expr> ` "`" . nr2char(getchar()) . "zz"
+
