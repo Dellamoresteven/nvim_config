@@ -23,19 +23,17 @@ Plug 'kien/rainbow_parentheses.vim'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
-Plug 'lfilho/cosco.vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree' 
+Plug 'scrooloose/nerdtree'
 "Plug 'shougo/vimfiler.vim'
 "Plug 'Shougo/unite.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-easy-align'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 " Plug 'tpope/vim-abolish'
 Plug 'Yggdroot/indentLine'
@@ -51,15 +49,17 @@ Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'morhetz/gruvbox'
 Plug 'spolu/dwm.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vimlab/split-term.vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
 
-Plug 'dyng/ctrlsf.vim' " search
+"Plug 'dyng/ctrlsf.vim' " search
+Plug 'mhinz/vim-grepper'
 
 Plug 'kshenoy/vim-signature' " sidebar Marks
+
+Plug 'cloudhead/neovim-fuzzy'
 
 call plug#end()
 
@@ -67,20 +67,7 @@ call plug#end()
 let g:python3_host_prog = expand('~/.config/nvim/env/bin/python3')
 
 """ Coloring
- syntax on
-" color dracula
- highlight Pmenu guibg=white guifg=black gui=bold
- highlight Comment gui=bold
-" highlight Normal gui=none
-" highlight NonText guibg=none
-
-" Opaque Background (Comment out to use terminal's profile)
- "set termguicolors
-
-" Transparent Background (For i3 and compton)
-highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
-
+ "syntax on
 
 set expandtab
 set shiftwidth=2
@@ -92,7 +79,7 @@ let g:gruvbox_invert_signs=0
 let g:gruvbox_improved_strings=0
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_undercurl=1
-let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_dark="dark"
 set background=dark
 colorscheme gruvbox
 
@@ -123,28 +110,11 @@ let g:airline_section_warning = ''
 let g:airline#extensions#tabline#enabled = 1
 
 " Neovim :Terminal
-tmap <Esc> <C-\><C-n>
-tmap <C-w> <Esc><C-w>
-"tmap <C-d> <Esc>:q<CR>
 autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-" Disable documentation window
-"set completeopt-=preview
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<C-n>"
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<C-Space>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-x>"
-
-" EasyAlign
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " indentLine
 let g:indentLine_char = '▏'
@@ -201,39 +171,20 @@ endfunction
 let mapleader=" "
 nmap <leader>q :NERDTreeToggle<CR>
 nmap \ :NERDTreeFind<CR>
-nmap <leader>w :TagbarToggle<CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
-xmap <leader>a gaip*
-nmap <leader>a gaip*
-"nmap <leader>s <C-w>s<C-w>j:terminal<CR>
 nmap <leader>vs :VTerm<CR>
-nmap <leader>d <Plug>(pydocstring)
-nmap <leader>f :Files<CR>
 
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
 nmap <silent> <leader><leader> :noh<CR>
 
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
-nmap <leader>x :bd<CR>
-nmap gr :GoRun<CR>
-"nmap q :q<CR>
-"nmap wq :wq<CR>
-"nmap w :w<CR>
 nmap qq :!qutebrowser &<CR>
 nmap <S-E> $
 nmap <S-B> 0
 autocmd FileType javascript,css,cpp,c nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 
-let g:ctrlsf_backend = 'rg'
-
-nmap <space>1 <C-j><esc><C-space>
-nmap <space>2 <C-j><esc><C-j><esc><C-space>
-nmap <space>3 <C-j><esc><C-j><esc><C-j><esc><C-space>
-"nmap <space>4 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
-"nmap <space>5 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
-"nmap <space>6 <C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-j><esc><C-space>
 
 nmap <space>s /
 nmap tt ]%
@@ -251,26 +202,14 @@ set relativenumber
 au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 let g:split_term_default_shell = "bash"
 
-"set foldmethod=indent
 set foldmethod=manual
 
 let g:gitgutter_git_executable = '/usr/bin/git'
 
 au TermClose * nested call OnTermClose()
 
-function! HLNext (blinktime)
-    set invcursorline
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    set invcursorline
-    redraw
-endfunction
-
-"nnoremap <silent> n  n:call HLNext(0.4)<cr>
-
 set spelllang=en
 set spell
-
 
 function! s:quteSearch(...)
     "execute(:!qutebrowser &)
@@ -284,3 +223,15 @@ command -nargs=1 Cute call s:quteSearch(<f-args>)
 nnoremap <expr> ' "`" . nr2char(getchar()) . "zz"
 nnoremap <expr> ` "`" . nr2char(getchar()) . "zz"
 
+nnoremap <C-p> :FuzzyOpen<CR>
+
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap jk <Esc>
+nmap <Leader>w :w<CR>
+
+nmap <Leader>f :Grepper -tool git -highlight<cr>
+"let g:ctrlsf_default_view_mode = 'compact'
+"let g:ctrlsf_backend = 'rg'
